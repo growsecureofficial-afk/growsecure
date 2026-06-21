@@ -38,38 +38,38 @@
   --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--primary) 40%, transparent), 0 10px 40px -10px color-mix(in oklab, var(--primary) 50%, transparent);
   --shadow-glow-sm: 0 0 20px -4px color-mix(in oklab, var(--primary) 45%, transparent);
   --shadow-elevated: 0 30px 80px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
-  --gradient-primary: linear-gradient(135deg, oklch(0.68 0.22 250), oklch(0.58 0.24 265));
-  --gradient-radial: radial-gradient(ellipse at top, color-mix(in oklab, var(--primary) 18%, transparent), transparent 60%);
-  --gradient-mesh: radial-gradient(at 20% 20%, color-mix(in oklab, var(--primary) 18%, transparent), transparent 50%), radial-gradient(at 80% 0%, color-mix(in oklab, oklch(0.6 0.2 220) 14%, transparent), transparent 50%), radial-gradient(at 50% 100%, color-mix(in oklab, var(--primary) 12%, transparent), transparent 50%);
+  --gradient-primary: linear-gradient(135deg, oklch(1 0 0), oklch(0.75 0 0));
+  --gradient-radial: radial-gradient(ellipse at top, color-mix(in oklab, var(--primary) 6%, transparent), transparent 60%);
+  --gradient-mesh: radial-gradient(at 20% 20%, color-mix(in oklab, var(--primary) 5%, transparent), transparent 50%), radial-gradient(at 80% 0%, color-mix(in oklab, var(--primary) 4%, transparent), transparent 50%), radial-gradient(at 50% 100%, color-mix(in oklab, var(--primary) 3%, transparent), transparent 50%);
   --grid-pattern: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
 }
 
 :root, .dark {
   --radius: 0.75rem;
-  /* Deep obsidian */
-  --background: oklch(0.13 0.02 255);
-  --foreground: oklch(0.98 0.005 250);
-  --surface: oklch(0.16 0.022 258);
-  --surface-elevated: oklch(0.19 0.025 258);
-  --card: oklch(0.165 0.022 258);
-  --card-foreground: oklch(0.98 0.005 250);
-  --popover: oklch(0.16 0.022 258);
-  --popover-foreground: oklch(0.98 0.005 250);
-  /* Electric blue matching logo */
-  --primary: oklch(0.68 0.22 250);
-  --primary-foreground: oklch(0.13 0.02 255);
-  --glow: oklch(0.75 0.2 245);
-  --secondary: oklch(0.22 0.03 258);
-  --secondary-foreground: oklch(0.96 0.005 250);
-  --muted: oklch(0.2 0.025 258);
-  --muted-foreground: oklch(0.68 0.02 255);
-  --accent: oklch(0.68 0.22 250);
-  --accent-foreground: oklch(0.13 0.02 255);
+  /* Pure obsidian from logo (#030502) */
+  --background: oklch(0.04 0.002 150);
+  --foreground: oklch(0.99 0 0);
+  --surface: oklch(0.08 0.002 150);
+  --surface-elevated: oklch(0.12 0.002 150);
+  --card: oklch(0.08 0.002 150);
+  --card-foreground: oklch(0.99 0 0);
+  --popover: oklch(0.08 0.002 150);
+  --popover-foreground: oklch(0.99 0 0);
+  /* Pure white as primary accent */
+  --primary: oklch(0.99 0 0);
+  --primary-foreground: oklch(0.04 0.002 150);
+  --glow: oklch(1 0 0);
+  --secondary: oklch(0.16 0.002 150);
+  --secondary-foreground: oklch(0.99 0 0);
+  --muted: oklch(0.14 0.002 150);
+  --muted-foreground: oklch(0.7 0.005 150);
+  --accent: oklch(0.99 0 0);
+  --accent-foreground: oklch(0.04 0.002 150);
   --destructive: oklch(0.65 0.22 25);
-  --destructive-foreground: oklch(0.98 0.005 250);
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 10%);
-  --ring: oklch(0.68 0.22 250);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(1 0 0 / 60%);
 }
 
 @layer base {
@@ -81,8 +81,8 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in oklab, var(--primary) 12%, transparent), transparent),
-      radial-gradient(ellipse 60% 40% at 90% 100%, color-mix(in oklab, var(--primary) 8%, transparent), transparent);
+      radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in oklab, var(--primary) 5%, transparent), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 100%, color-mix(in oklab, var(--primary) 3%, transparent), transparent);
     background-attachment: fixed;
   }
 }
