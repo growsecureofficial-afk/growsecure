@@ -38,9 +38,9 @@
   --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--primary) 40%, transparent), 0 10px 40px -10px color-mix(in oklab, var(--primary) 50%, transparent);
   --shadow-glow-sm: 0 0 20px -4px color-mix(in oklab, var(--primary) 45%, transparent);
   --shadow-elevated: 0 30px 80px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
-  --gradient-primary: linear-gradient(135deg, oklch(0.68 0.22 250), oklch(0.58 0.24 265));
-  --gradient-radial: radial-gradient(ellipse at top, color-mix(in oklab, var(--primary) 18%, transparent), transparent 60%);
-  --gradient-mesh: radial-gradient(at 20% 20%, color-mix(in oklab, var(--primary) 18%, transparent), transparent 50%), radial-gradient(at 80% 0%, color-mix(in oklab, oklch(0.6 0.2 220) 14%, transparent), transparent 50%), radial-gradient(at 50% 100%, color-mix(in oklab, var(--primary) 12%, transparent), transparent 50%);
+  --gradient-primary: linear-gradient(135deg, oklch(1 0 0), oklch(0.75 0 0));
+  --gradient-radial: radial-gradient(ellipse at top, color-mix(in oklab, var(--primary) 6%, transparent), transparent 60%);
+  --gradient-mesh: radial-gradient(at 20% 20%, color-mix(in oklab, var(--primary) 5%, transparent), transparent 50%), radial-gradient(at 80% 0%, color-mix(in oklab, var(--primary) 4%, transparent), transparent 50%), radial-gradient(at 50% 100%, color-mix(in oklab, var(--primary) 3%, transparent), transparent 50%);
   --grid-pattern: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
 }
 
