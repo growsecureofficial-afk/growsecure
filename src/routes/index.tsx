@@ -1,29 +1,43 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Navbar } from "@/components/site/Navbar";
+import { Footer } from "@/components/site/Footer";
+import { Hero, TrustBand, Services, Compliance, Features, Pricing, FAQ, FinalCTA } from "@/components/site/sections";
+import { SalesModal, BookingModal } from "@/components/site/modals";
+import { Toaster } from "@/components/ui/sonner";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "GrowSecure — Enterprise Penetration Testing & Compliance" },
+      { name: "description", content: "Enterprise-grade pentesting and audit-ready compliance. SOC 2, ISO 27001, HIPAA, PCI DSS aligned offensive security from Udaipur, India." },
+      { property: "og:title", content: "GrowSecure — Enterprise Pentesting" },
+      { property: "og:description", content: "Identify critical vulnerabilities before attackers do." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const [salesOpen, setSalesOpen] = useState(false);
+  const [bookOpen, setBookOpen] = useState(false);
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        <Hero onBook={() => setBookOpen(true)} onReport={() => setSalesOpen(true)} />
+        <TrustBand />
+        <Services />
+        <Compliance />
+        <Features />
+        <Pricing onSales={() => setSalesOpen(true)} />
+        <FAQ />
+        <FinalCTA onBook={() => setBookOpen(true)} onSales={() => setSalesOpen(true)} />
+      </main>
+      <Footer />
+      <SalesModal open={salesOpen} onOpenChange={setSalesOpen} />
+      <BookingModal open={bookOpen} onOpenChange={setBookOpen} />
+      <Toaster />
     </div>
   );
 }
