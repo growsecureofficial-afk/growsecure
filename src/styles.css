@@ -81,8 +81,8 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in oklab, var(--primary) 12%, transparent), transparent),
-      radial-gradient(ellipse 60% 40% at 90% 100%, color-mix(in oklab, var(--primary) 8%, transparent), transparent);
+      radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in oklab, var(--primary) 5%, transparent), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 100%, color-mix(in oklab, var(--primary) 3%, transparent), transparent);
     background-attachment: fixed;
   }
 }
