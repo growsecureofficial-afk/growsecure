@@ -6,11 +6,11 @@ import { Logo } from "./Logo";
 import { SalesModal, BookingModal } from "./modals";
 
 const servicesItems = [
-  { icon: Shield, title: "Web App Pentesting", href: "/#services", desc: "OWASP Top 10 + business logic" },
-  { icon: Smartphone, title: "Mobile App Pentesting", href: "/#services", desc: "iOS, Android, hybrid stacks" },
-  { icon: Code2, title: "API Security Testing", href: "/#services", desc: "REST, GraphQL, gRPC audits" },
-  { icon: Cloud, title: "Cloud Infrastructure", href: "/#services", desc: "AWS, Azure, GCP hardening" },
-  { icon: FileCode2, title: "Source Code Review", href: "/#services", desc: "Static + dynamic engineering" },
+  { icon: Shield, title: "Web App Pentesting", href: "/services", desc: "OWASP Top 10 + business logic" },
+  { icon: Smartphone, title: "Mobile App Pentesting", href: "/services", desc: "iOS, Android, hybrid stacks" },
+  { icon: Code2, title: "API Security Testing", href: "/services", desc: "REST, GraphQL, gRPC audits" },
+  { icon: Cloud, title: "Cloud Infrastructure", href: "/services", desc: "AWS, Azure, GCP hardening" },
+  { icon: FileCode2, title: "Source Code Review", href: "/services", desc: "Static + dynamic engineering" },
 ];
 
 const solutionsItems = [
@@ -76,7 +76,7 @@ export function Navbar() {
 
             <div className="hidden items-center gap-2 md:flex">
               <Button variant="cyber" size="sm" onClick={() => setSalesOpen(true)}>Talk to Sales</Button>
-              <Button variant="hero" size="sm" onClick={() => setBookOpen(true)}>Book a Meeting</Button>
+              <Button variant="hero" size="sm" asChild><Link to="/book">Book a Meeting</Link></Button>
             </div>
 
             <button className="lg:hidden" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
@@ -87,7 +87,7 @@ export function Navbar() {
           {mobileOpen && (
             <div className="glass-card mt-2 rounded-2xl p-4 lg:hidden">
               <nav className="flex flex-col gap-1">
-                <a href="/#services" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-primary/5">Services</a>
+                <Link to="/services" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-primary/5">Services</Link>
                 <a href="/#compliance" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-primary/5">Solutions</a>
                 <a href="/#features" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-primary/5">Features</a>
                 <a href="/#pricing" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-primary/5">Pricing</a>
@@ -95,7 +95,7 @@ export function Navbar() {
                 <Link to="/faq" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-primary/5">FAQ</Link>
                 <div className="mt-2 grid grid-cols-2 gap-2">
                   <Button variant="cyber" size="sm" onClick={() => { setSalesOpen(true); setMobileOpen(false); }}>Talk to Sales</Button>
-                  <Button variant="hero" size="sm" onClick={() => { setBookOpen(true); setMobileOpen(false); }}>Book</Button>
+                  <Button variant="hero" size="sm" asChild><Link to="/book" onClick={() => setMobileOpen(false)}>Book</Link></Button>
                 </div>
               </nav>
             </div>
