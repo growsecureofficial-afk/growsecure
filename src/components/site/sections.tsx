@@ -257,74 +257,88 @@ export function Features() {
 /* ---------------- PRICING ---------------- */
 const tiers = [
   {
-    name: "Startup Core",
-    tagline: "Fixed-scope single application audit",
-    price: { single: "$4,900", retainer: "$1,900/mo" },
-    desc: "Early-stage teams needing a quick, defensible security check.",
-    features: ["Single web or mobile app", "OWASP Top 10 coverage", "Exec summary + dev report", "30-day patch re-test", "1 round of remediation Q&A"],
-    cta: "Start with Core",
+    name: "Essential Audit",
+    sub: "Single Asset",
+    price: "$999",
+    priceNote: "USD · one-time",
+    desc: "Tailored for small businesses, local entities, and early-stage startups that need immediate security validation or basic compliance for one primary asset.",
+    cta: "Get Essential Audit",
+    features: [
+      "Scope: 1 single asset (web app, mobile app, or cloud env up to 5 endpoints/IPs)",
+      "Automated framework scans + manual verification of OWASP Top 10",
+      "Verified Security Findings Report",
+      "Actionable patching & remediation guidance",
+      "Email-based delivery and report sign-off",
+    ],
   },
   {
-    name: "Growth Compliance",
-    tagline: "Most popular",
-    price: { single: "$12,500", retainer: "$4,800/mo" },
-    desc: "Full architecture pentesting + SOC 2 / HIPAA assessment kit.",
-    features: ["Web + API + Cloud surface", "SOC 2 / HIPAA evidence kit", "Threat-modeling workshop", "Quarterly delta scans", "Slack-channel response (4h SLA)", "Auditor-handoff package"],
-    cta: "Scale with Compliance",
+    name: "Advanced Security",
+    sub: "Multi-Asset · High Resource",
+    price: "$2,499",
+    priceNote: "USD · per engagement",
+    desc: "Designed for growing companies and well-funded startups requiring a thorough deep-dive across their customer-facing footprint to satisfy SOC 2 or HIPAA standards.",
+    cta: "Choose Advanced",
     highlight: true,
+    badge: "Most Popular",
+    features: [
+      "Full-spectrum review across multiple assets (up to 30 endpoints)",
+      "100% comprehensive manual penetration testing",
+      "Deep logic flaws, auth bypass, privilege escalation, business mapping",
+      "Compliance-aligned technical report + executive summary",
+      "1 free patch re-test (within 30 days) before clean final report",
+    ],
   },
   {
-    name: "Enterprise Retainer",
-    tagline: "Continuous monitoring",
-    price: { single: "Custom", retainer: "From $9,500/mo" },
-    desc: "Ongoing security, on-demand API scans, zero-day patch assurance.",
-    features: ["Unlimited engagement scope", "Named lead security engineer", "On-demand attack simulations", "Zero-day patch verification", "Compliance program co-management", "24/7 incident escalation line"],
-    cta: "Talk to an Engineer",
+    name: "Enterprise Level",
+    sub: "Custom Scope",
+    price: "Custom",
+    priceNote: "Contact Sales for quote",
+    desc: "Engineered for large-scale operations, medical networks, and financial ecosystems with intricate infrastructure, continuous release cycles, and strict regulatory overhead.",
+    cta: "Request Custom Quote",
+    features: [
+      "Tailored to your exact threat landscape (AD domains, multi-cloud, source code)",
+      "Continuous threat modeling + deep-tier exploitation attempts",
+      "Regulatory validation: ISO 27001, PCI-DSS, GDPR, and more",
+      "Multi-tier reporting: technical, auditor-ready, attestation letters",
+      "Live 1-on-1 remediation calls with your engineering leads",
+      "Dedicated high-priority project tracking",
+    ],
   },
 ];
 
 export function Pricing({ onSales }: { onSales: () => void }) {
-  const [mode, setMode] = useState<"single" | "retainer">("single");
   return (
     <section id="pricing" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4">
-        <SectionHeader eyebrow="Pricing" title="Transparent. Scoped. Senior-led." subtitle="No discovery-call paywalls. Pick a shape, then refine with an engineer." />
-        <div className="mt-8 flex justify-center">
-          <div className="glass inline-flex gap-1 rounded-full p-1">
-            {(["single", "retainer"] as const).map((m) => (
-              <button key={m} onClick={() => setMode(m)} className={`rounded-full px-5 py-1.5 text-xs font-semibold capitalize transition ${mode === m ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}>
-                {m === "single" ? "Single Assessment" : "Ongoing Retainer"}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <SectionHeader eyebrow="Pricing" title="Transparent. Scoped. Senior-led." subtitle="Three engagement shapes — from a focused single-asset audit to a fully-custom enterprise program." />
+        <div className="mt-12 grid items-stretch gap-5 md:grid-cols-3">
           {tiers.map((t) => (
-            <div key={t.name} className={`glass-card relative flex flex-col overflow-hidden rounded-2xl p-7 ${t.highlight ? "border-primary/40 shadow-glow" : ""}`}>
+            <div key={t.name} className={`glass-card relative flex flex-col overflow-hidden rounded-2xl p-7 ${t.highlight ? "border-primary/40 shadow-glow md:-translate-y-2" : ""}`}>
               {t.highlight && (
                 <div className="absolute right-5 top-5 inline-flex items-center gap-1 rounded-full bg-primary/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary ring-1 ring-primary/30">
-                  <Sparkles className="h-3 w-3" /> {t.tagline}
+                  <Sparkles className="h-3 w-3" /> {t.badge}
                 </div>
               )}
-              <h3 className="font-display text-xl font-bold">{t.name}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{t.desc}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{t.sub}</p>
+              <h3 className="mt-1 font-display text-2xl font-bold">{t.name}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{t.desc}</p>
               <div className="mt-6 flex items-baseline gap-2">
-                <span className="font-display text-4xl font-bold">{t.price[mode]}</span>
-                {t.price[mode] !== "Custom" && !t.price[mode].includes("mo") && <span className="text-sm text-muted-foreground">/ engagement</span>}
+                <span className="font-display text-4xl font-bold">{t.price}</span>
               </div>
+              <p className="mt-1 text-xs text-muted-foreground">{t.priceNote}</p>
               <ul className="mt-6 space-y-2.5 text-sm">
                 {t.features.map((f) => (
                   <li key={f} className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{f}</li>
                 ))}
               </ul>
-              <div className="mt-8">
+              <div className="mt-8 pt-2">
                 <Button variant={t.highlight ? "hero" : "cyber"} className="w-full" onClick={onSales}>{t.cta}</Button>
               </div>
             </div>
           ))}
         </div>
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          Need a custom scope? <button onClick={onSales} className="font-semibold text-primary hover:underline">Connect with an expert security engineer</button> instantly.
+          Need a custom scope? <button onClick={onSales} className="font-semibold text-primary hover:underline">Connect with a senior security engineer</button> instantly.
         </p>
       </div>
     </section>
