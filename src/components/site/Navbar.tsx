@@ -6,11 +6,11 @@ import { Logo } from "./Logo";
 import { SalesModal, BookingModal } from "./modals";
 
 const servicesItems = [
-  { icon: Shield, title: "Web App Pentesting", href: "/#services", desc: "OWASP Top 10 + business logic" },
-  { icon: Smartphone, title: "Mobile App Pentesting", href: "/#services", desc: "iOS, Android, hybrid stacks" },
-  { icon: Code2, title: "API Security Testing", href: "/#services", desc: "REST, GraphQL, gRPC audits" },
-  { icon: Cloud, title: "Cloud Infrastructure", href: "/#services", desc: "AWS, Azure, GCP hardening" },
-  { icon: FileCode2, title: "Source Code Review", href: "/#services", desc: "Static + dynamic engineering" },
+  { icon: Shield, title: "Web App Pentesting", href: "/services", desc: "OWASP Top 10 + business logic" },
+  { icon: Smartphone, title: "Mobile App Pentesting", href: "/services", desc: "iOS, Android, hybrid stacks" },
+  { icon: Code2, title: "API Security Testing", href: "/services", desc: "REST, GraphQL, gRPC audits" },
+  { icon: Cloud, title: "Cloud Infrastructure", href: "/services", desc: "AWS, Azure, GCP hardening" },
+  { icon: FileCode2, title: "Source Code Review", href: "/services", desc: "Static + dynamic engineering" },
 ];
 
 const solutionsItems = [
