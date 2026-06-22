@@ -137,7 +137,7 @@ export function Services() {
 
 function BentoCard({ icon: Icon, title, desc, className = "", featured = false }: any) {
   return (
-    <div className={`group glow-border glass-card relative overflow-hidden rounded-2xl p-6 transition-all hover:-translate-y-0.5 ${className}`}>
+    <Link to="/services" className={`group glow-border glass-card relative block overflow-hidden rounded-2xl p-6 transition-all hover:-translate-y-0.5 ${className}`}>
       {featured && <div className="absolute inset-0 -z-10 bg-grid-sm opacity-30" />}
       {featured && <div className="absolute -right-20 -top-20 -z-10 h-64 w-64 rounded-full bg-primary/20 blur-3xl" />}
       <div className="flex h-full flex-col">
@@ -154,10 +154,10 @@ function BentoCard({ icon: Icon, title, desc, className = "", featured = false }
           </ul>
         )}
         <div className="mt-auto pt-6">
-          <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary opacity-0 transition group-hover:opacity-100">Explore <ArrowRight className="h-3 w-3" /></span>
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition group-hover:gap-2">Explore <ArrowRight className="h-3 w-3" /></span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
