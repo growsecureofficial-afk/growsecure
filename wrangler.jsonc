@@ -3,7 +3,7 @@
   "name": "growsecure",
   "compatibility_date": "2026-06-22",
   "compatibility_flags": ["nodejs_compat"],
-  "main": ".output/server/index.mjs",
+  "main": "dist/server/server.js",
   "observability": {
     "enabled": true
   }
